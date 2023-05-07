@@ -5,6 +5,7 @@ import io
 import sys
 import json
 import folium
+import requests
 from folium.plugins.draw import Draw
 import pandas as pd
 from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget  # , QFileDialog
@@ -16,7 +17,29 @@ class CodificationPalabre():
         self.geojsonfile = geojsonFile
 
     def createDelimitation():
-        pass
+        
+        url = "http://localhost:8080/polygons" # URL de l’API à appeler
+        points = [
+        [166.21704, -21.615572],
+        [166.219218, -21.616968],
+        [166.217426, -21.618046],
+        [166.215205, -21.617367],
+        [166.21704, -21.615572]
+        ] # Liste des points à envoyer dans le corps de la requête
+        
+        # Envoi de la requête POST avec les points dans le corps de la requête
+        response = requests.post(url, json=points)
+        
+        # Vérification du code de retour de la réponse
+        if response.status_code == requests.codes.ok:
+
+            # La requête a été traitée avec succès
+            print("Requête traitée avec succès.")
+        else:
+            
+            # La requête a échoué
+            print("La requête a échoué avec le code de retour {}".format(response.status_code))
+        
 
 
 class Mapy(QWidget):
