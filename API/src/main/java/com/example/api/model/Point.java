@@ -1,5 +1,6 @@
 package com.example.api.model;
 
+
 public class Point {
 
     private double  latitude;
