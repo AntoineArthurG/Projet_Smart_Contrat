@@ -16,7 +16,7 @@ class CodificationPalabre():
     def __init__(self,  geojsonFile):
         self.geojsonfile = geojsonFile
 
-    def createDelimitation():
+    def createDelimitation(self):
         
         url = "http://localhost:8080/polygons" # URL de l’API à appeler
         points = [
