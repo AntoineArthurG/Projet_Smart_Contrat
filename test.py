@@ -1,32 +1,60 @@
-# Test l'affichage de la map avec folium
+import requests
 
-import shutil
-import os
-import io
-import sys
-import json
-import folium
-from folium.plugins.draw import Draw
-import pandas as pd
-from PyQt5.QtWidgets import QApplication, QVBoxLayout, QWidget  # , QFileDialog
-from PyQt5.QtWebEngineWidgets import QWebEngineView
+url = f"http://localhost:8080/polygons" # URL de l’API à appeler
 
+""" points = [
+    [166.21704, -21.615572],
+    [166.219218, -21.616968],
+    [166.217426, -21.618046],
+    [166.215205, -21.617367],
+    [166.21704, -21.615572]
+] # Liste des points à envoyer dans le corps de la requête """
+""" points = {"coordinates":[
+    [166.21704,-21.615572],
+     [166.219218,-21.616968],
+     [166.217426,-21.618046],
+     [166.215205,-21.617367],
+     [166.215827,-21.61619],
+     [166.21704,-21.615572]]
+     } """
+points = {"coordinates" : [
+    {
+        "latitude": 166.21704,
+        "longitude" : -21.615572
+    },
+    {
+        "latitude": 166.219218,
+        "longitude" : -21.616968
+    },
+    {
+        "latitude": 166.217426,
+        "longitude" : -21.618046
+    },
+    {
+        "latitude": 166.215205,
+        "longitude" : -21.617367
+    },
+    {
+        "latitude": 166.215827,
+        "longitude" : -21.61619
+    },
+    {
+        "latitude": 166.21704,
+        "longitude" : -21.615572
+    }
+]
+}
 
-temp_file = "metadata"
-#m = folium.Map(location=[-21.6166700, 166.2166700], zoom_start=17)  # , crs="EPSG3163")
+# Envoi de la requête POST avec les points dans le corps de la requête
+response = requests.post(url, json=points)
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    m = folium.Map(
-        location=[45.5236, -122.6750], zoom_start=13
-    )
+# Vérification du code de retour de la réponse
+if response.status_code == requests.codes.ok:
 
-    data = io.BytesIO()
-    m.save(data, close_file=False)
-
-    w = QWebEngineView()
-    w.setHtml(data.getvalue().decode())
-    w.resize(640, 480)
-    w.show()
-
-    sys.exit(app.exec_())
+    # La requête a été traitée avec succès
+    print("Requête traitée avec succès.")
+else:
+    
+    # La requête a échoué
+    print("La requête a échoué avec le code de retour {}".format(response.status_code))
+    
