@@ -1,4 +1,4 @@
-package nc.unc.smartContractBailRural.webservice.dto;
+package nc.unc.smartContractBailRural.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

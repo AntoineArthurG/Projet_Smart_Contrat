@@ -1,15 +1,15 @@
-package nc.unc.smartContractBailRural.webservice;
+package nc.unc.smartContractBailRural.controller;
 
 import io.swagger.annotations.ApiOperation;
-import nc.unc.smartContractBailRural.entity.Point;
-import nc.unc.smartContractBailRural.entity.SmartContract;
+import nc.unc.smartContractBailRural.model.Point;
+import nc.unc.smartContractBailRural.model.SmartContract;
 import nc.unc.smartContractBailRural.repository.jpa.GpsPointRepository;
 import nc.unc.smartContractBailRural.repository.jpa.SmartContractRepository;
-import nc.unc.smartContractBailRural.webservice.dto.GpsPointDto;
-import nc.unc.smartContractBailRural.webservice.dto.SmartContractDto;
-import nc.unc.smartContractBailRural.webservice.mapper.GpsPointMapper;
-import nc.unc.smartContractBailRural.webservice.mapper.SmartContractMapper;
-import nc.unc.smartContractBailRural.webservice.services.EtherumServices;
+import nc.unc.smartContractBailRural.controller.dto.GpsPointDto;
+import nc.unc.smartContractBailRural.controller.dto.SmartContractDto;
+import nc.unc.smartContractBailRural.controller.mapper.GpsPointMapper;
+import nc.unc.smartContractBailRural.controller.mapper.SmartContractMapper;
+import nc.unc.smartContractBailRural.controller.services.EtherumServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;

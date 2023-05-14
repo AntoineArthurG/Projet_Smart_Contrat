@@ -1,8 +1,8 @@
-package nc.unc.smartContractBailRural.webservice.mapper;
+package nc.unc.smartContractBailRural.controller.mapper;
 
-import nc.unc.smartContractBailRural.entity.Point;
+import nc.unc.smartContractBailRural.model.Point;
 import nc.unc.smartContractBailRural.repository.jpa.GpsPointRepository;
-import nc.unc.smartContractBailRural.webservice.dto.GpsPointDto;
+import nc.unc.smartContractBailRural.controller.dto.GpsPointDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

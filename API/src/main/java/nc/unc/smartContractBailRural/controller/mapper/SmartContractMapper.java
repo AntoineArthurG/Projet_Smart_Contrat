@@ -1,7 +1,7 @@
-package nc.unc.smartContractBailRural.webservice.mapper;
+package nc.unc.smartContractBailRural.controller.mapper;
 
-import nc.unc.smartContractBailRural.entity.SmartContract;
-import nc.unc.smartContractBailRural.webservice.dto.SmartContractDto;
+import nc.unc.smartContractBailRural.model.SmartContract;
+import nc.unc.smartContractBailRural.controller.dto.SmartContractDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

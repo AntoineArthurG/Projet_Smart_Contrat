@@ -1,4 +1,4 @@
-package nc.unc.smartContractBailRural.entity;
+package nc.unc.smartContractBailRural.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

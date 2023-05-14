@@ -1,7 +1,7 @@
-package nc.unc.smartContractBailRural.webservice.services;
+package nc.unc.smartContractBailRural.controller.services;
 
-import nc.unc.smartContractBailRural.entity.Point;
-import nc.unc.smartContractBailRural.entity.SmartContract;
+import nc.unc.smartContractBailRural.model.Point;
+import nc.unc.smartContractBailRural.model.SmartContract;
 import nc.unc.smartContractBailRural.smartContractBailRural.BailRural;
 import org.springframework.stereotype.Service;
 import org.web3j.crypto.Credentials;
