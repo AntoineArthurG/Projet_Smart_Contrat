@@ -10,7 +10,7 @@ from folium.plugins import Draw
 
 app = Flask(__name__)
 
-directory_temp = ""
+directory_temp = os.getcwd()
 geojson_file = "./data.geojson"
 
 
